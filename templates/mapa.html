@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mapa Interactivo</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <!-- Se crea el menú con un botón por cada lugar -->
+  <div id="menu">
+    <h2>Lugares</h2>
+    {% for lugar in lugares %}
+      <a href="/lugar/{{ lugar.id }}"
+         class="{{ 'activo' if seleccionado and seleccionado.id == lugar.id else '' }}">
+        {{ lugar.id }}. {{ lugar.nombre }}
+      </a>
+    {% endfor %}
+  </div>
+
+  <!-- Importamos el mapa -->
+  <!--
+  <div id="mapa">
+    <img src="/static/plano.jpg" alt="Plano del barrio">
+  </div>
+  -->
+
+  <!-- Importamos el mapa, con un marcador numerado sobre cada lugar -->
+  <div id="mapa">
+    <div id="mapa-wrapper">
+      <img src="/static/plano.jpg" alt="Plano del barrio">
+ 
+      {% for lugar in lugares %}
+        <a href="/lugar/{{ lugar.id }}"
+           class="marcador {{ 'activo' if seleccionado and seleccionado.id == lugar.id else '' }}"
+           style="left: {{ lugar.x }}%; top: {{ lugar.y }}%;">
+          {{ lugar.id }}
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Mostramos la info del lugar seleccionado -->
+  <div id="info">
+    {% if seleccionado %}
+      <h2>{{ seleccionado.nombre }}</h2>
+      <p>{{ seleccionado.descripcion }}</p>
+    {% else %}
+      <h2>Elegí un lugar del menú</h2>
+    {% endif %}
+  </div>
+
+</body>
+</html>

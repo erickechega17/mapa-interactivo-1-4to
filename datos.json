@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "nombre": "Estadio Mario Alberto Kempes",
+        "descripcion": "El estadio Mario Alberto Kempes es un recinto deportivo mundialista ubicado en el departamento Capital de Córdoba, Argentina. Se sitúa sobre la avenida Ramón Cárcano, cerca de la avenida Circunvalación, en el barrio de Chateau Carreras, a 10 km del centro de la ciudad.",
+        "x": 20,
+        "y": 40
+    },
+    {
+        "id": 2,
+        "nombre": "Arco de Córdoba",
+        "descripcion": "El Arco de Córdoba es una obra de arte ubicada en el sector sureste de la ciudad de Córdoba, Argentina. Su origen se remonta al año 1942 durante la intendencia de Donato Latella Frías.",
+        "x": 80,
+        "y": 55
+    }
+]
